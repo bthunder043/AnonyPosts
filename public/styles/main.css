@@ -1,0 +1,104 @@
+:root {
+  --bg-green: #A8CF73;
+  --accent-pink: #D95F9D;
+  --bg-yellow: #F5D75E;
+  --text-dark: #2E2E2E;
+
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  margin: 0;
+  flex-direction: column;
+  text-align: center;
+  background-color: var(--bg-yellow);
+  background: linear-gradient(to bottom, #A8CF73 20%, #F5D75E 80% );
+}
+
+.heading {
+  font-family: "Londrina Outline", sans-serif;
+  background-color: var(--bg-green);
+  color: var(--accent-pink);
+  font-size: 200px;
+  margin: 0;
+  padding: 20px;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: left;
+  margin-top: 2.5rem;
+}
+
+.posts {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg-green);
+  color: var(--text-dark);
+  border: none;
+  border-radius: 20px;
+  padding: 20px;
+  width: 250px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.posts h2{
+  margin: 0px;
+
+}
+
+
+.posts:hover {
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+}
+
+.title {
+  color: var(--text-dark);
+  margin-bottom: 2.5rem;
+  font-family: "Poppins", sans-serif;
+  margin-top: 2.5rem;
+}
+
+input {
+  border: 2px solid var(--accent-pink);
+  border-radius: 12px;
+  background-color: var(--bg-yellow);
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  padding: 10px 10px;
+  margin-right: 10px;
+}
+
+
+button {
+  border: none;
+  border-radius: 12px;
+  color: var(--text-dark);
+  background-color: var(--bg-green);
+  padding: 10px 10px;
+  margin-right: 10px;
+}
+
+.submit {
+  background-color: var(--accent-pink);
+  color: var(--text-dark);
+  /* font-size: 12px; */
+}
+
+button:hover,
+.submit:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}

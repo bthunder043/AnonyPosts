@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnonyPosts</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Londrina+Outline&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+
+</head>
+
+<body>
+    <h1 class="heading">AnonyPosts</h1>
+    <h1 class="title">Create a New Post</h1>
+
+
+    <form action="/submit" method="post">
+        <input name="title" placeholder="Post Title" required autocomplete="off">
+        <input name="content" placeholder="Write your post..." required autocomplete="off">
+        <input class="submit" type="submit" value="Submit">
+        <br><br>
+    </form>
+
+
+    <div class="container">
+        <%posts.forEach(post=> {%>
+            <div class="posts">
+                <% if (editId===post.id) { %>
+                    <form action="/edit/<%= post.id %>" method="post">
+                        <input name="title" value="<%= post.title %>" required autocomplete="off">
+                        <input name="content" value="<%= post.content %>" required autocomplete="off">
+                        <button type="submit"><span class="material-symbols-outlined">
+                                check
+                            </span></button>
+                    </form>
+                    <% } else { %>
+                        <h2>
+                            <%= post.title %>
+                        </h2>
+                        <p>
+                            <%= post.content %>
+                        </p>
+
+                        <form action="/edit/<%= post.id %>">
+                            <button type="submit"><span class="material-symbols-outlined">
+                                    edit
+                                </span></button>
+                        </form>
+
+                        <form action="/delete/<%= post.id %>" method="post">
+                            <button type="submit"><span class="material-symbols-outlined">
+                                    delete
+                                </span></button>
+                        </form>
+                        <% } %>
+            </div>
+
+            <% }) %>
+    </div>
+</body>
+
+</html>
